@@ -1,0 +1,54 @@
+controller_manager:
+    ros__parameters:
+        update_rate: 1000  # Hz
+
+        use_sim_time: true
+
+        position_controller:
+            type: position_controllers/JointGroupPositionController
+
+        joint_state_broadcaster:
+            type: joint_state_broadcaster/JointStateBroadcaster
+
+
+joint_state_broadcaster:
+  ros__parameters:
+    publish_rate: 50
+
+
+position_controller:
+    ros__parameters:
+        state_publish_rate: 50.0 # Defaults to 50
+        action_monitor_rate: 20.0 # Defaults to 20
+        joints:
+            - bl_thigh_joint
+            - br_thigh_joint
+            - fl_thigh_joint
+            - fr_thigh_joint
+            - bl_leg_joint
+            - br_leg_joint
+            - fl_leg_joint
+            - fr_leg_joint
+            - bl_shin_joint
+            - br_shin_joint
+            - fl_shin_joint
+            - fr_shin_joint
+        interface_name: position
+        command_interfaces:
+            - position
+        state_interfaces:
+            - position
+            - velocity
+        gains:
+            bl_thigh_joint  : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            br_thigh_joint  : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fl_thigh_joint  : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fr_thigh_joint  : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            bl_leg_joint    : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            br_leg_joint    : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fl_leg_joint    : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fr_leg_joint    : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            bl_shin_joint   : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            br_shin_joint   : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fl_shin_joint   : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+            fr_shin_joint   : {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}

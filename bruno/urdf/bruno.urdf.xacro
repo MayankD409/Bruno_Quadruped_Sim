@@ -1,0 +1,1085 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="bruno" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="dummy_link"></link>
+  <link
+    name="base_link" >
+    <inertial>
+      <origin
+        xyz="0.0226398495790573 -3.89308433540458E-05 -0.0917853865936327"
+        rpy="0 0 0" />
+      <mass
+        value="40.9811213814977" />
+      <inertia
+        ixx="0.705590024772154"
+        ixy="-0.000426844603876142"
+        ixz="0.0538798871665836"
+        iyy="2.10623867387607"
+        iyz="8.22509666239292E-05"
+        izz="2.66085772664499" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+	</joint>
+  <link
+    name="fr_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.0632805867054035 2.1285884999056E-09 0.0305615244081003"
+        rpy="0 0 0" />
+      <mass
+        value="2.03276391085227" />
+      <inertia
+        ixx="0.00362430847918608"
+        ixy="-6.93144774285455E-10"
+        ixz="0.000758555151467763"
+        iyy="0.00831656981525165"
+        iyz="2.36222199008423E-10"
+        izz="0.00835118856419136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="0.308523286801734 -0.170000173902694 -0.0943774201689784"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fr_leg_link">
+    <inertial>
+      <origin
+        xyz="0.12019790111426 -0.143259479284328 0.0203781049178077"
+        rpy="0 0 0" />
+      <mass
+        value="2.21745458605018" />
+      <inertia
+        ixx="0.0266716191184848"
+        ixy="0.0187884251532103"
+        ixz="-0.00116911776317338"
+        iyy="0.0200463346888596"
+        iyz="0.00139351727422659"
+        izz="0.0434443595227279" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_leg_joint"
+    type="revolute">
+    <origin
+      xyz="-0.170183232756006 0 0.0354382464541242"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="fr_thigh_link" />
+    <child
+      link="fr_leg_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fr_shin_link">
+    <inertial>
+      <origin
+        xyz="0.179968891055547 0.215776713253008 0.000215390278360372"
+        rpy="0 0 0" />
+      <mass
+        value="3.17121221400824" />
+      <inertia
+        ixx="0.0519451453620737"
+        ixy="-0.0399304170181899"
+        ixz="-8.01801154788949E-05"
+        iyy="0.0379833163092041"
+        iyz="-9.46092673541023E-05"
+        izz="0.0858857153551078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fr_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_shin_joint"
+    type="revolute">
+    <origin
+      xyz="0.264190523301229 -0.297986287064543 0.0249999734100426"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="fr_leg_link" />
+    <child
+      link="fr_shin_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fl_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.0632805867054036 -2.12868082882789E-09 0.0305615244081003"
+        rpy="0 0 0" />
+      <mass
+        value="2.03276391085227" />
+      <inertia
+        ixx="0.00362430847918608"
+        ixy="-6.93137931212592E-10"
+        ixz="-0.000758555151467763"
+        iyy="0.00831656981525165"
+        iyz="-2.36221092593191E-10"
+        izz="0.00835118856419137" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="0.308523286801734 0.170000173902694 -0.0943774201689784"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fl_leg_link">
+    <inertial>
+      <origin
+        xyz="0.120210884605648 0.143248557446126 0.0203781358138403"
+        rpy="0 0 0" />
+      <mass
+        value="2.21746271008323" />
+      <inertia
+        ixx="0.0266721257111891"
+        ixy="-0.0187883416352741"
+        ixz="-0.00116937614015478"
+        iyy="0.0200458538368986"
+        iyz="-0.0013933496117703"
+        izz="0.0434443467625671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_leg_joint"
+    type="revolute">
+    <origin
+      xyz="0.170183232756006 0 0.0354382464541242"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="fl_thigh_link" />
+    <child
+      link="fl_leg_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fl_shin_link">
+    <inertial>
+      <origin
+        xyz="0.179968891055547 -0.215776713253008 -0.000215390278360372"
+        rpy="0 0 0" />
+      <mass
+        value="3.17121221400824" />
+      <inertia
+        ixx="0.0519451453620737"
+        ixy="0.0399304170181898"
+        ixz="8.01801154788981E-05"
+        iyy="0.0379833163092041"
+        iyz="-9.46092673541049E-05"
+        izz="0.0858857153551077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/fl_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_shin_joint"
+    type="revolute">
+    <origin
+      xyz="0.264190523301229 0.297986287064544 0.0250000265899572"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="fl_leg_link" />
+    <child
+      link="fl_shin_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="br_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.0632805867054036 2.12858870807242E-09 0.0305615244081001"
+        rpy="0 0 0" />
+      <mass
+        value="2.03276391085227" />
+      <inertia
+        ixx="0.00362430847918608"
+        ixy="-6.93144759042335E-10"
+        ixz="0.000758555151467761"
+        iyy="0.00831656981525165"
+        iyz="2.36222195879922E-10"
+        izz="0.00835118856419136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="-0.308523286801734 -0.170000173902694 -0.0943774201689784"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="br_leg_link">
+    <inertial>
+      <origin
+        xyz="-0.120197901114102 0.143259479284322 0.0203781049177207"
+        rpy="0 0 0" />
+      <mass
+        value="2.21745458603243" />
+      <inertia
+        ixx="0.0266716191184828"
+        ixy="0.0187884251532099"
+        ixz="0.00116911776316971"
+        iyy="0.020046334688851"
+        iyz="-0.00139351727422628"
+        izz="0.0434443595227212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_leg_joint"
+    type="revolute">
+    <origin
+      xyz="-0.170183232756006 0 0.0354382464541242"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="br_thigh_link" />
+    <child
+      link="br_leg_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="br_shin_link">
+    <inertial>
+      <origin
+        xyz="0.179968891055545 0.215776713253009 0.000215390278360483"
+        rpy="0 0 0" />
+      <mass
+        value="3.17121221400824" />
+      <inertia
+        ixx="0.0519451453620743"
+        ixy="-0.0399304170181898"
+        ixz="-8.01801154789139E-05"
+        iyy="0.0379833163092035"
+        iyz="-9.46092673541252E-05"
+        izz="0.0858857153551078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/br_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_shin_joint"
+    type="revolute">
+    <origin
+      xyz="-0.264190523301232 0.297986287064542 0.0249999734100428"
+      rpy="0 0 0" />
+    <parent
+      link="br_leg_link" />
+    <child
+      link="br_shin_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bl_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.0632805867054036 -2.12868118965037E-09 0.0305615244081003"
+        rpy="0 0 0" />
+      <mass
+        value="2.03276391085227" />
+      <inertia
+        ixx="0.00362430847918608"
+        ixy="-6.93137903500395E-10"
+        ixz="-0.000758555151467762"
+        iyy="0.00831656981525164"
+        iyz="-2.36221087771152E-10"
+        izz="0.00835118856419136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="-0.308523286801734 0.170000173902694 -0.0943774201689784"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_thigh_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bl_leg_link">
+    <inertial>
+      <origin
+        xyz="-0.120210884605528 -0.143248557446073 0.0203781358136048"
+        rpy="0 0 0" />
+      <mass
+        value="2.21746271005845" />
+      <inertia
+        ixx="0.0266721257111783"
+        ixy="-0.0187883416352729"
+        ixz="0.00116937614014934"
+        iyy="0.020045853836886"
+        iyz="0.00139334961176758"
+        izz="0.0434443467625641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_leg_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_leg_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_leg_joint"
+    type="revolute">
+    <origin
+      xyz="0.170183232756006 0 0.0354382464541243"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="bl_thigh_link" />
+    <child
+      link="bl_leg_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bl_shin_link">
+    <inertial>
+      <origin
+        xyz="0.179968891055545 -0.215776713253009 -0.0002153902783604"
+        rpy="0 0 0" />
+      <mass
+        value="3.17121221400823" />
+      <inertia
+        ixx="0.0519451453620743"
+        ixy="0.0399304170181898"
+        ixz="8.01801154789103E-05"
+        iyy="0.0379833163092035"
+        iyz="-9.46092673541166E-05"
+        izz="0.0858857153551078" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_shin_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/bl_shin_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_shin_joint"
+    type="revolute">
+    <origin
+      xyz="-0.264190523301232 -0.297986287064542 0.0250000265899572"
+      rpy="0 0 0" />
+    <parent
+      link="bl_leg_link" />
+    <child
+      link="bl_shin_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="1.72571862754323E-05 3.32564935764668E-05 0.00622668080215022"
+        rpy="0 0 0" />
+      <mass
+        value="0.0392526006384488" />
+      <inertia
+        ixx="7.59894863075948E-06"
+        ixy="2.26302148135042E-11"
+        ixz="-6.73333402354733E-09"
+        iyy="7.57957258862203E-06"
+        iyz="-1.11660880756736E-08"
+        izz="7.4337348241905E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bruno/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0165082867155349"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <!-- CONTROLLERS FOR LEGS -->
+
+  <ros2_control name="GazeboSystem" type="system">
+ 	<hardware>
+     <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+ 	</hardware>
+ 	
+ 	<!-- Position Controllers-->
+  <joint name="bl_thigh_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="br_thigh_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fl_thigh_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fr_thigh_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="bl_leg_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="br_leg_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fl_leg_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fr_leg_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="bl_shin_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="br_shin_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fl_shin_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="fr_shin_joint">
+    <command_interface name="position">
+		    <param name="min">-3.14</param>
+		    <param name="max">3.14</param>
+		</command_interface>
+	  <state_interface name="position"/>
+	  <state_interface name="velocity"/>
+  </joint>
+
+  </ros2_control>
+  
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find bruno)/config/control.yaml</parameters>
+    </plugin>
+	</gazebo>
+
+  <!-- Lidar Plugin-->
+  <gazebo reference="lidar_link">
+  <sensor name="lidar" type="ray">
+    <pose>0.0 0.0 0.0 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan_4</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>lidar_link</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+
+  <!-- IMU Plugin-->
+  <gazebo reference="base_link">
+  <gravity>true</gravity>
+  <sensor name="imu_sensor" type="imu">
+    <always_on>true</always_on>
+    <update_rate>100</update_rate>
+    <visualize>true</visualize>
+    <topic>__default_topic__</topic>
+    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+      <topicName>imu/absolute</topicName>
+      <bodyName>base_link</bodyName>
+      <updateRateHZ>10.0</updateRateHZ>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <frameName>base_link</frameName>
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+    </plugin>
+    <pose>0 0 0 0 0 0</pose>
+  </sensor>
+  </gazebo>
+
+  <gazebo>
+  <plugin filename="libodometry_plugin.so" name="odometry_plugin">
+    <!-- Name of the link for which the odometry is required -->
+    <frame>base_link</frame>
+    <!-- Any arbitray name for the world frame -->
+    <world_frame>fixed_world</world_frame>
+  </plugin>
+  </gazebo>
+
+  <!--Body coloring-->
+  <xacro:macro name="body_color">
+  <visual>
+    <material>
+      <!-- Set ambient, diffuse, and specular values for dark blue color -->
+      <ambient>0 0 0.5 1</ambient>
+      <diffuse>0 0 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+  </xacro:macro>
+  <xacro:macro name="lidar_color">
+    <visual>
+        <material>
+            <!-- Set ambient, diffuse, and specular values for matte black color -->
+            <ambient>0.05 0.05 0.05 1</ambient>
+            <diffuse>0.05 0.05 0.05 1</diffuse>
+            <specular>0.01 0.01 0.01 1</specular>
+            <emissive>0 0 0 0</emissive>
+        </material>
+    </visual>
+  </xacro:macro>
+  <xacro:macro name="leg_color">
+    <visual>
+    <material>
+        <!-- Set ambient, diffuse, and specular values to achieve grey color -->
+        <ambient>0.5 0.5 0.5 1</ambient>
+        <diffuse>0.5 0.5 0.5 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <emissive>0 0 0 0</emissive>
+    </material>
+    </visual>
+  </xacro:macro>
+  <xacro:macro name="beige">
+  <visual>
+    <material>
+      <!-- Set ambient, diffuse, and specular values for beige color -->
+      <ambient>0.76 0.7 0.5 1</ambient>
+      <diffuse>0.76 0.7 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+  </xacro:macro>
+
+  <gazebo reference="base_link">
+    <xacro:body_color />
+  </gazebo>
+  <gazebo reference="bl_thigh_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="bl_leg_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="bl_shin_link">
+    <xacro:leg_color />
+  </gazebo>
+  <gazebo reference="br_thigh_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="br_leg_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="br_shin_link">
+    <xacro:leg_color />
+  </gazebo>
+  <gazebo reference="fr_thigh_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="fr_leg_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="fr_shin_link">
+    <xacro:leg_color />
+  </gazebo>
+  <gazebo reference="fl_thigh_link">
+    <xacro:beige />
+  </gazebo>\
+  <gazebo reference="fl_leg_link">
+    <xacro:beige />
+  </gazebo>
+  <gazebo reference="fl_shin_link">
+    <xacro:leg_color />
+  </gazebo>
+  <gazebo reference="lidar_link">
+    <xacro:lidar_color />
+  </gazebo>
+
+
+</robot>
