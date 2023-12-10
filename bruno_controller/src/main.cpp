@@ -32,7 +32,7 @@ int main(int argc, char * argv[])
   RobotController bruno(body_dimensions, leg_dimensions);
 
   auto dsd = robot_controller_node->create_subscription<sensor_msgs::msg::Joy>(
-    "spot_joy/joy_ramped",
+    "bruno_joy/joy_ramped",
     rclcpp::SensorDataQoS(),
     std::bind(&RobotController::joystick_command, &bruno, std::placeholders::_1));
 

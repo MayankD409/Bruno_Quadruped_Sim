@@ -16,7 +16,7 @@ class PS4Controller:
         self.node = rclpy.create_node("joypad_ramped")
         qos_profile = QoSProfile(depth=10)
 
-        self.publisher = self.node.create_publisher(Joy, "spot_joy/joy_ramped", qos_profile)
+        self.publisher = self.node.create_publisher(Joy, "bruno_joy/joy_ramped", qos_profile)
         self.subscription = self.node.create_subscription(Joy, "joy", self.callback, qos_profile)
         self.rate = rate
 
