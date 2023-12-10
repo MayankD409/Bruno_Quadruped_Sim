@@ -6,7 +6,7 @@
 
 This project aims to simulate a quadruped robot in Gazebo and control it with keyboard/Joypad commands using ROS2 Humble.
 
-<img src="images/bruno_gazebo.png" width="533"> <img src="images/bruno_rviz.png" width="593">
+<img src="images/bruno_gazebo.png" width="533"> <img src="images/bruno_rviz.png" width="533">
 
 ## Features
 
